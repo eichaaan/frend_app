@@ -25,6 +25,9 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'bcrypt'
+  gem 'carrierwave'
+  gem 'mini_magick'
+  gem 'mimemagic', '0.3.7'
 end
 
 group :test do
