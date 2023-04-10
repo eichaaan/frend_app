@@ -19,9 +19,9 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    @blog = Blog.new(blog_params)
-    @blog.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
-    render :new if @blog.invalid?
+    @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    render :new if @picture.invalid?
   end
 
   def show
@@ -46,10 +46,11 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:image, :image_cache)
+    params.require(:picture).permit(:content, :image, :image_cache)
   end
 
   def set_picture
     @picture = Picture.find(params[:id])
   end
 end
+
